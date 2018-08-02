@@ -149,7 +149,7 @@ class PluginMatrix(Plugin):
             "draw": draw,
             "recordsFiltered": len(data),
             "recordsTotal": len(data),
-            "data": data[start:int(start+length)]
+            "data": data[start:int(start+length)],
             "headers": list(_headers),
             "groups": _groups
         })
