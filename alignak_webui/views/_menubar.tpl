@@ -258,6 +258,17 @@
          %print("Missing plugin Minemap")
          %end
 
+         %try:
+         <li>
+            <a href="{{ webui.get_url('Matrix') }}">
+               <span class="fa fa-fw fa-th"></span>
+               <span>{{_('Matrix')}}</span>
+            </a>
+         </li>
+         %except RouteBuildError:
+         %print("Missing plugin Matrix")
+         %end
+
          <li class="divider"></li>
 
          %try:
