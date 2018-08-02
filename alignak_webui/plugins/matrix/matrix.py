@@ -6,6 +6,7 @@
 """
 
 import re
+import json
 
 from logging import getLogger
 from collections import OrderedDict
@@ -143,13 +144,12 @@ class PluginMatrix(Plugin):
 
             data.append(_temp)
 
-        xdata = {
-            'draw': draw,
-            'data': data[start:int(start+length)],
-            'recordsFiltered': len(data),
-            'recordsTotal': len(data),
-            'headers': list(_headers),
-            'groups': _groups
-        }
 
-        return xdata
+        return json.dumps({
+            "draw": draw,
+            "recordsFiltered": len(data),
+            "recordsTotal": len(data),
+            "data": data[start:int(start+length)]
+            "headers": list(_headers),
+            "groups": _groups
+        })
