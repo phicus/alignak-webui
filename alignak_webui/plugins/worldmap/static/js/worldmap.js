@@ -11,9 +11,9 @@ var positionHosts = false;
 
 var $map = null;
 
-var defaultZoom = 12;
+//var defaultZoom = 12;
 if (debugMaps) console.log('Default zoom: ', defaultZoom);
-var defaultCenter = L.latLng(46.60611, 1.87528);
+//var defaultCenter = L.latLng(46.60611, 1.87528);
 if (debugMaps) console.log('Default center: ', defaultCenter);
 
 var actions = false;

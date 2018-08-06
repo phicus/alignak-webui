@@ -1,7 +1,17 @@
 %setdefault('debug', False)
 %setdefault('load', False)
 
+%default_zoom = params.get('default_zoom',12)
+%default_latitude = params.get('default_latitude', 46.60611)
+%default_longitude = params.get('default_longitude', 1.87528)
+
+
 <script>
+
+    var defaultZoom = {{ default_zoom }};
+    var defaultCenter = {'lat': {{ default_latitude }}, 'lng': {{ default_longitude }} };
+
+
     %# Actions are allowed?
     actions = {{ 'true' if current_user.is_power() else 'false' }};
 

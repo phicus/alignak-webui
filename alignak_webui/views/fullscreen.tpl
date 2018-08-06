@@ -104,11 +104,14 @@
                   <span class="icon-bar"></span>
                </button>
                <a class="navbar-brand" href="/">
+                 <span style="font-size: 36px;">Krill</span>
+                 <!--
                   <img
                      src="{{request.app.config.get('app_logo', '/static/images/alignak_white_logo.png')}}"
                      style="{{request.app.config.get('app_logo_css', '')}}"
                      alt="{{_('Alignak WebUI logo')}}"
                      title="{{request.app.config.get('app_logo_title', _('Alignak Web User Interface'))}}" />
+                -->
                </a>
 
                <ul class="nav navbar-nav navbar-left">

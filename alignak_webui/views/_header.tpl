@@ -28,7 +28,8 @@
 
 <!-- Page header -->
 <header>
-   <nav id="topbar" class="navbar navbar-fixed-top">
+
+   <nav id="topbar" class="navbar">
       <div class="navbar-header">
          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapsible-part">
             <span class="sr-only">{{_('Toggle navigation')}}</span>
@@ -37,11 +38,14 @@
             <span class="icon-bar"></span>
          </button>
          <a class="navbar-brand" href="/">
+            <span style="font-size: 36px;">Krill</span>
+            <!--
             <img
                src="{{request.app.config.get('app_logo', '/static/images/alignak_white_logo.png')}}"
                style="{{request.app.config.get('app_logo_css', '')}}"
                alt="{{_('Alignak WebUI logo')}}"
                title="{{request.app.config.get('app_logo_title', _('Alignak Web User Interface'))}}" />
+            -->
          </a>
 
          <ul class="nav navbar-nav navbar-left" id="_header_states">
@@ -56,7 +60,6 @@
          %else:
          %include("_menubar_beginner.tpl")
          %end
-
          <ul class="nav navbar-nav navbar-left">
             <li class="hidden-xs" id="loading" style="display: none;">
                <a href="#">
@@ -108,6 +111,9 @@
          </ul>
       </div>
    </nav>
+
+   %include("_filters.tpl")
+
 </header>
 
 %if request.app.config.get('play_sound', 'no') == 'yes':

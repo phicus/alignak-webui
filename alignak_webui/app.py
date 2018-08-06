@@ -1055,6 +1055,18 @@ def edition_mode():
     return json.dumps({'edition_mode': session['edition_mode'], 'message': user_message})
 
 
+# --------------------------------------------------------------------------------------------------
+# websocket
+# --------------------------------------------------------------------------------------------------
+@app.route('/ws', 'GET')
+# User preferences page ...
+def websocket():
+    """Set edition mode on / off"""
+    return json.dumps({'ok':1})
+
+
+
+
 # Bottle templates path
 TEMPLATE_PATH.append(
     os.path.join(
