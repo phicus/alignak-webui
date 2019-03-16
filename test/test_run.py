@@ -20,7 +20,7 @@
 # along with (WebUI).  If not, see <http://www.gnu.org/licenses/>.
 # import the unit testing module
 
-from __future__ import print_function
+
 
 import os
 import shlex
@@ -34,6 +34,11 @@ os.environ['ALIGNAK_WEBUI_TEST'] = '1'
 os.environ['ALIGNAK_WEBUI_DEBUG'] = '1'
 os.environ['ALIGNAK_WEBUI_CONFIGURATION_FILE'] = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'settings.cfg')
 print("Configuration file", os.environ['ALIGNAK_WEBUI_CONFIGURATION_FILE'])
+os.environ['ALIGNAK_WEBUI_LOGGER_FILE'] = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'logging.json')
+print("Logger configuration file", os.environ['ALIGNAK_WEBUI_LOGGER_FILE'])
+
+if os.path.exists('/tmp/alignak-webui.log'):
+    os.remove('/tmp/alignak-webui.log')
 
 
 class TestStart(unittest2.TestCase):
@@ -182,7 +187,7 @@ class TestStart(unittest2.TestCase):
 
         print("Launching application with WS configuration in environment...")
         os.environ['ALIGNAK_WEBUI_WS'] = 'http://127.0.0.1:8888'
-        os.environ['ALIGNAK_WEBUI_LOG'] = '/tmp'
+        os.environ['ALIGNAK_WEBUI_LOG_DIR'] = '/tmp'
         process = subprocess.Popen(
             shlex.split('python ../alignak_webui/app.py')
         )

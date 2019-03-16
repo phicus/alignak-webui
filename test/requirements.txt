@@ -1,5 +1,10 @@
 # Python requirements for unit tests
+# Include main application requirements
+-r ../requirements.txt
+
 unittest2
+mock
+
 # uWsgi Web server
 uwsgi
 # Web test
@@ -8,6 +13,9 @@ webtest
 # Use py.test as test-runner
 pytest
 pytest-cov
+
+# Use Tox for Python versions tests
+tox
 
 # Let coverage use the most recent version
 coverage
